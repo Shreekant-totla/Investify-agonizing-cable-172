@@ -9,6 +9,7 @@ import { Box,Flex,IconButton,Input,InputGroup,InputLeftElement,
     import { FaBars, FaSearch, FaUserCircle, FaShoppingCart, FaBell } from 'react-icons/fa';
 // import { Route,Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import "./Navbar.css"
 
 
 const Navbar = () => {
@@ -16,23 +17,15 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
 
-  const linkStyles = {
-    color: "black",
-    textDecoration: "none",
-  };
-
-  const hoverStyles = {
-    color: "red",
-  };
    
   return (<>
-    <Box bg="white" >
-        <Flex bg="#266D84" color="white"  alignItems="center"  px={4} py={2} ml="20%" w="100%">
+    <Box bg="white" style={{ boxShadow: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px'}}>
+        <Flex className='flexupper' bg="#266D84"  color="white" alignItems="center"  px={4} py={2} ml="20%" w="100%">
         <Box>
-             <Link to="/aboutus">About Us</Link>
+             <Link className="nav-upper" to="/aboutus"><b>About Us</b></Link>
           </Box>
           <Box mx={8}>
-            <Link to="/contactus">Contact Us</Link>
+            <Link className="nav-upper" to="/contactus"><b>Contact Us</b></Link>
           </Box></Flex>
           <Flex>
       <Box alignItems="center" width="15%" ml="2%" px={4} >
@@ -41,24 +34,24 @@ const Navbar = () => {
 
         {/* Menu */}
         
-        <Flex ml="3%"  display={{ base: "none", md: "flex" }} alignItems="center">
+        <Flex className='flex' ml="3%" color="#455A64" display={{ base: "none", md: "flex" }} alignItems="center">
           <Box mx={4}>
-            <Link>DASHBOARD</Link>
+          <Link className="nav-link"><b>DASHBOARD</b></Link>
           </Box>
           <Box mx={4}>
             <Popover >
                 <PopoverTrigger>
-                    <Link style={linkStyles} onMouseOver={(e) => e.target.style = hoverStyles} onMouseLeave={(e) => e.target.style = linkStyles}>INVESTMENT</Link >
+                    <Link className="nav-link"><b>INVESTMENT</b></Link >
                 </PopoverTrigger>
                 <PopoverContent bg="#CFD8DC" ml="18px" w="1500px">
                     <PopoverArrow />
                     <PopoverBody>
                     {/* <PopoverCloseButton /> */}
                     <Flex alignItems="center" justifyContent="space-evenly">
-                    <Link>Mutual Funds</Link>
-                    <Link>Insta Redeem Packs</Link>
-                    <Link>Curated Packs</Link>
-                    <Link>Corporate Fixed Deposits</Link>
+                    <Link className="nav-link"><b>Mutual Funds</b></Link>
+                    <Link className="nav-link"><b>Insta Redeem Packs</b></Link>
+                    <Link className="nav-link"><b>Curated Packs</b></Link>
+                    <Link className="nav-link"><b>Corporate Fixed Deposits</b></Link>
                     </Flex>
 
                    </PopoverBody>
@@ -66,16 +59,16 @@ const Navbar = () => {
     </Popover>
           </Box>
           <Box mx={4}>
-            <Link>INSURANCE</Link>
+            <Link className="nav-link"><b>INSURANCE</b></Link>
           </Box>
           <Box mx={4}>
-            <Link>LOANS</Link>
+            <Link className="nav-link"><b>LOANS</b></Link>
           </Box>
           <Box mx={4}>
-            <Link>TOOLS</Link>
+            <Link className="nav-link"><b>TOOLS</b></Link>
           </Box>
           <Box mx={4}>
-            <Link>KNOWLEDGE CENTER</Link>
+            <Link className="nav-link"><b>KNOWLEDGE CENTER</b></Link>
           </Box>
         </Flex>
 
@@ -142,7 +135,7 @@ const Navbar = () => {
         </Flex>
       
     </Box>
-    <hr/><hr/></>
+    </>
   );
 }
 
