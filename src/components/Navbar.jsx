@@ -1,11 +1,10 @@
 import React from 'react'
 // import { useState } from 'react'
-import { Box,Flex,IconButton,Input,InputGroup,InputLeftElement,
-    Menu,MenuButton,MenuItem,MenuList,Text,useDisclosure,
+import { Box,Flex,IconButton,Input,InputGroup,InputLeftElement,useDisclosure,
     Drawer,DrawerBody,DrawerFooter,DrawerHeader,DrawerOverlay,
     DrawerContent,DrawerCloseButton,Button,Image,
-    Popover,PopoverTrigger,PopoverContent,PopoverHeader,
-  PopoverBody,PopoverArrow,PopoverCloseButton,} from '@chakra-ui/react';
+    Popover,PopoverTrigger,PopoverContent,
+  PopoverBody,PopoverArrow,} from '@chakra-ui/react';
     import { FaBars, FaSearch, FaUserCircle, FaShoppingCart, FaBell } from 'react-icons/fa';
 // import { Route,Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -48,7 +47,7 @@ const Navbar = () => {
                     <PopoverBody>
                     {/* <PopoverCloseButton /> */}
                     <Flex alignItems="center" justifyContent="space-evenly">
-                    <Link className="nav-link"><b>Mutual Funds</b></Link>
+                    <Link className="nav-link" to="/discovermutualfunds"><b>Mutual Funds</b></Link>
                     <Link className="nav-link"><b>Insta Redeem Packs</b></Link>
                     <Link className="nav-link"><b>Curated Packs</b></Link>
                     <Link className="nav-link"><b>Corporate Fixed Deposits</b></Link>
@@ -84,13 +83,27 @@ const Navbar = () => {
         <Flex alignItems="center" >
           {/* Login */}
           <Box mx={0} mr={2}>
-            <Menu>
+            {/* <Menu>
               <MenuButton as={IconButton} aria-label="Login" icon={<FaUserCircle />} variant="ghost" />
               <MenuList>
                 <MenuItem>Login</MenuItem>
                 <MenuItem>Sign Up</MenuItem>
               </MenuList>
-            </Menu>
+            </Menu> */}
+            <Popover>
+              <PopoverTrigger>
+                <IconButton aria-label="Login" icon={<FaUserCircle />} variant="ghost" />
+                  </PopoverTrigger>  
+                    <PopoverContent w="200px">
+                      <PopoverArrow />
+                        <PopoverBody> 
+                          <Link to="/login">Login</Link><br/>
+                          <Link to="/signup">Sign Up</Link><br/>
+                          <Link to="/faq">FAQ's</Link><br/>
+                          <Link to="/whishlist">Whishlist</Link><br/>
+                      </PopoverBody>
+                    </PopoverContent>
+            </Popover>
           </Box>
 
           {/* Notification */}
