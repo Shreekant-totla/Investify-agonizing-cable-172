@@ -29,7 +29,7 @@ const Navbar = () => {
           <Flex>
       <Box alignItems="center" width="15%" ml="2%" px={4} >
         {/* Logo */}
-        <Image  src="/images/investify logo.png"/></Box>
+        <Link to="/"><Image  src="/images/investify logo.png"/></Link></Box>
 
         {/* Menu */}
         
@@ -47,7 +47,7 @@ const Navbar = () => {
                     <PopoverBody>
                     {/* <PopoverCloseButton /> */}
                     <Flex alignItems="center" justifyContent="space-evenly">
-                    <Link className="nav-link" to="/discovermutualfunds"><b>Mutual Funds</b></Link>
+                    <Link className="nav-link" to="/mutualfundsoverview"><b>Mutual Funds</b></Link>
                     <Link className="nav-link"><b>Insta Redeem Packs</b></Link>
                     <Link className="nav-link"><b>Curated Packs</b></Link>
                     <Link className="nav-link"><b>Corporate Fixed Deposits</b></Link>
